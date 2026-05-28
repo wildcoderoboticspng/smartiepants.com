@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>smartiepants.com</title>
+  <!-- Google Fonts for a friendly, professional kid-centric vibe -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* --- CUSTOMER FRIENDLY PINK & BLUE BRANDING --- */
+    :root {
+      --primary-blue: #3A86FF;
+      --soft-blue: #EBF2FF;
+      --primary-pink: #FF006E;
+      --soft-pink: #FFE5EC;
+      --text-dark: #2B2D42;
+      --text-light: #6C757D;
+      --pure-white: #FFFFFF;
+      --card-shadow: 0 8px 24px rgba(58, 134, 255, 0.12);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      color: var(--text-dark);
+      /* FULL SITE BACKGROUND */
+      background: linear-gradient(180deg, var(--soft-blue) 0%, var(--soft-pink) 100%);
+      background-attachment: fixed;
+      line-height: 1.6;
+      padding-bottom: 110px; /* Extra spacing for the enlarged mobile dock */
+    }
+
+    h1, h2, h3, h4, h5, .btn {
+      font-family: 'Fredoka', sans-serif;
+    }
+
+    /* --- HEADER & HERO SECTION --- */
+    header {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 0 0 32px 32px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .logo-img {
+      width: 100%;
+      max-width: 170px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      color: var(--primary-blue);
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+
+    h1 span {
+      color: var(--primary-pink);
+    }
+
+    h4 {
+      color: var(--primary-pink);
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .hero-p {
+      max-width: 600px;
+      margin: 0 auto 25px auto;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+    }
+
+    /* --- BUTTONS --- */
+    .btn {
+      background-color: var(--primary-pink);
+      color: var(--pure-white);
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(255, 0, 110, 0.3);
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 0, 110, 0.45);
+      background-color: #E0005F;
+    }
+
+    /* --- MAIN CONTENT STRUCTURES --- */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      color: var(--primary-blue);
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      text-align: center;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background-color: var(--primary-pink);
+      border-radius: 2px;
+    }
+
+    .about-box, .vision-box, .contact-box {
+      background: var(--pure-white);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .section-img {
+      width: 100%;
+      max-width: 550px;
+      height: auto;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+
+    /* --- CARDS GRID --- */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: var(--pure-white);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      border-top: 5px solid var(--primary-blue);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .card:nth-child(even) {
+      border-top-color: var(--primary-pink);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .card h5 {
+      color: var(--text-dark);
+      font-size: 1.25rem;
+    }
+
+    .quote {
+      grid-column: 1 / -1;
+      background: linear-gradient(to right, var(--soft-pink), var(--soft-blue));
+      padding: 30px;
+      border-left: 6px solid var(--primary-pink);
+      border-radius: var(--radius);
+      font-size: 1.20rem;
+      font-style: italic;
+      font-weight: 600;
+      text-align: center;
+      color: var(--text-dark);
+      margin: 20px 0;
+    }
+
+    /* --- WHY CHOOSE US LIST --- */
+    .features-list {
+      background: var(--pure-white);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      list-style: none;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .features-list li {
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-align: left;
+    }
+
+    .features-list li::before {
+      content: '✏️';
+      position: absolute;
+      left: 0;
+      top: -2px;
+      font-size: 1.2rem;
+    }
+
+    /* --- DEDICATED CONTACT SECTION --- */
+    .contact-box {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin-top: 15px;
+    }
+
+    .contact-list li {
+      font-size: 1.2rem;
+      margin: 12px 0;
+      font-weight: 600;
+    }
+
+    .contact-list a {
+      color: var(--primary-blue);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-list a:hover {
+      color: var(--primary-pink);
+    }
+
+    /* --- MODAL FORM CONTAINER --- */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background-color: var(--pure-white);
+      padding: 30px;
+      border-radius: var(--radius);
+      max-width: 500px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      animation: popUp 0.3s ease-out;
+    }
+
+    @keyframes popUp {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--text-light);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid var(--soft-blue);
+      border-radius: 8px;
+      font-family: inherit;
+    }
+
+    /* --- FIXED & SECURITY PROOFED MOBILE ACTIONS DOCK --- */
+    .contact-dock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--pure-white);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 12px 6px;
+      box-shadow: 0 -6px 25px rgba(0,0,0,0.15);
+      z-index: 99999; /* Forces deck to stay on top of everything */
+      border-radius: 24px 24px 0 0;
+    }
+
+    .dock-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      gap: 6px;
+      flex: 1;
+      height: 100%;
+      padding: 6px 0;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Fixed Tap Target Areas: Children inherit pointer activity flawlessly */
+    .dock-btn * {
+      pointer-events: none;
+    }
+
+    /* Super-sized clickable structural icons */
+    .dock-btn .icon {
+      font-size: 1.8rem;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease;
+    }
+
+    .dock-btn:active .icon {
+      transform: scale(0.9);
+    }
+
+    .dock-whatsapp .icon { background-color: #25D366; }
+    .dock-whatsapp { color: #21b858; }
+    .dock-call .icon { background-color: #3A86FF; }
+    .dock-call { color: #3A86FF; }
+    .dock-email .icon { background-color: #FF006E; }
+    .dock-email { color: #FF006E; }
+
+    footer {
+      background-color: var(--text-dark);
+      color: #AEB3C0;
+      text-align: center;
+      padding: 40px 20px 140px 20px; /* Base cushion protection */
+      font-size: 0.9rem;
+    }
+
+    footer h3 {
+      color: var(--pure-white);
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO HEADER -->
+  <header>
+    <div class="logo-container">
+      <a href="https://ibb.co/ZC6Jq5t">
+        <img src="https://i.ibb.co/1xfnF1h/1779464377357.png" alt="Smartie Pants Logo" class="logo-img" border="0">
+      </a>
+      <h1><b>SMARTIE</b> <span><b>PANTS</b></span></h1>
+    </div>
+    <h4>Empowering every colourful learner</h4>
+    <p class="hero-p">At <b><b>Smartie Pants</b></b>, we create a <b>safe, inclusive, and nurturing learning environment</b> where every child is encouraged to grow, explore, and thrive at their own pace.</p>
+    <button class="btn" id="openFormBtn">Enroll Today</button>
+  </header>
+
+  <div class="container">
+    
+    <!-- ABOUT SECTION -->
+    <section>
+      <h2>ABOUT <b>SMARTIE PANTS</b></h2>
+      <div class="about-box">
+        <a href="https://ibb.co/FLV4cnjV">
+          <img src="https://i.ibb.co/NdS2f7HS/Leonardo-Phoenix-Create-a-image-illustrating-an-African-classr-3.jpg" alt="African classroom support illustration" class="section-img" border="0">
+        </a>
+        <p><b><b>Smartie Pants</b></b> is a dedicated inclusive learning centre focused on supporting young learners through engaging educational experiences, developmental activities, and individualized learning support. We believe that every child deserves the opportunity to learn with confidence, joy, and dignity regardless of their abilities or learning style.</p>
+        <br>
+        <p>Our goal is to create meaningful learning experiences that build confidence, independence, creativity, and school readiness while embracing every learner’s uniqueness.</p>
+      </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section>
+      <h2>OUR MISSION & VISION</h2>
+      <div class="vision-box">
+        <img src="https://i.ibb.co/xSwGn3sc/our-mission.jpg" alt="our mission" class="section-img" border="0">
+        <p>To become a trusted and inspiring learning space where every child feels valued, included, supported, and empowered to succeed academically, socially, and emotionally.</p>
+        <br><hr style="border: 1px solid var(--soft-blue); margin: 20px 0;"><br>
+        <a href="https://ibb.co/b5y1C5B1">
+          <img src="https://i.ibb.co/TMnc7M8c/diverse-small-schoolchildren-putting-hands-together-classroom-teamwok-children-concept-excited-group.jpg" alt="diverse school children teamwork" class="section-img" border="0">
+        </a>
+        <p>To become a <b>trusted and inspiring</b> learning space where every child feels valued, included, supported, and empowered to succeed academically, socially, and emotionally.</p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section>
+      <h2>OUR SERVICES</h2>
+      <div class="grid">
+        
+        <div class="card">
+          <h5>Inclusive Preschool Classes</h5>
+          <a href="https://ibb.co/tMFMt2g5">
+            <img src="https://i.ibb.co/ccVcH80d/y-edited.jpg" alt="preschool environment" border="0">
+          </a>
+          <p>Our inclusive preschool classes provide a warm and engaging environment where children learn through creativity, exploration, play, and structured developmental activities designed to support early childhood growth.</p>
+        </div>
+
+        <div class="card">
+          <h5>Sensory Play & Learning Groups</h5>
+          <a href="https://ibb.co/m5Rd8c40">
+            <img src="https://i.ibb.co/RTgtyDcN/images-38.jpg" alt="images-38" border="0">
+          </a>
+          <p>We offer sensory-based learning experiences that help children strengthen communication, coordination, emotional development, focus, and social interaction through guided play and interactive activities.</p>
+        </div>
+
+        <div class="card">
+          <h5>School Readiness Programmes</h5>
+          <a href="https://ibb.co/VYtDbmmR">
+            <img src="https://i.ibb.co/whRC8ssV/Website-Headers.png" alt="School Readiness" border="0">
+          </a>
+          <p>Our school readiness programmes prepare children for a successful transition into formal schooling by building confidence, foundational literacy, numeracy, communication, and independent learning skills.</p>
+        </div>
+
+        <div class="card">
+          <h5>Parent & Child Learning Sessions</h5>
+          <a href="https://imgbb.com/">
+            <img src="https://i.ibb.co/3VK7J1C/black-family-mother-child-reading-260nw-2308188711.jpg" alt="mother and child reading" border="0">
+          </a>
+          <p>These sessions encourage meaningful parent-child interaction through guided educational activities that strengthen learning, communication, emotional bonding, and developmental support at home.</p>
+        </div>
+
+        <div class="card">
+          <h5>Homework Support Clubs</h5>
+          <a href="https://ibb.co/PZ8vdBbr">
+            <img src="https://i.ibb.co/3yH9nt8T/kids-learning-together-stockcake.jpg" alt="kids learning together" border="0">
+          </a>
+          <p>We provide supportive homework assistance in a calm and encouraging environment where learners receive guidance, motivation, and academic support tailored to their individual needs.</p>
+        </div>
+
+        <div class="card">
+          <h5>Reading & Literacy Intervention</h5>
+          <a href="https://ibb.co/hFp6pkLn">
+            <img src="https://i.ibb.co/whDkDTBb/czupryk-reading.jpg" alt="child reading" border="0">
+          </a>
+          <p>Our literacy support programmes focus on improving reading confidence, comprehension, vocabulary, spelling, and language development using engaging and learner-friendly strategies.</p>
+        </div>
+
+        <div class="card">
+          <h5>Inclusive STEM Programmes</h5>
+          <a href="https://imgbb.com/">
+            <img src="https://i.ibb.co/Y5TZWnH/istockphoto-639407632-612x612.jpg" alt="STEM activities" border="0">
+          </a>
+          <p>Children are introduced to exciting Science, Technology, Engineering, and Mathematics activities that encourage creativity, curiosity, teamwork, and problem-solving in an inclusive learning environment.</p>
+        </div>
+
+        <div class="card">
+          <h5>Individualized Tutoring Support</h5>
+          <a href="https://imgbb.com/">
+            <img src="https://i.ibb.co/204k4t7T/istockphoto-1343515308-612x612.jpg" alt="one on one tutoring" border="0">
+          </a>
+          <p>We provide personalized tutoring sessions designed to support learners with diverse educational needs by focusing on each child’s strengths, pace, and learning style.</p>
+        </div>
+
+        <div class="card">
+          <h5>Assistive Technology Support</h5>
+          <a href="https://imgbb.com/">
+            <img src="https://i.ibb.co/ycrmswbK/school-young-african-american-boy-600nw-2526764163.jpg" alt="school young african american boy 600nw 2526764163" border="0">
+          </a>
+          <p>We help learners use educational technology and supportive tools that improve communication, participation, independence, and access to learning opportunities.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- THERAPY INTEGRATION -->
+    <section>
+      <h2>Therapy-Integrated Education</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 30px auto; font-size: 1.1rem;">At <b><b>Smartie Pants</b></b>, we combine education with developmental support to create a holistic learning experience for every child. Our therapy-integrated programmes are designed to strengthen communication, motor development, sensory regulation, confidence, and social interaction in a supportive and inclusive environment.</p>
+      
+      <div class="grid">
+        <div class="card">
+          <h5>Speech & Language Group Assistance</h5>
+          <p>Our speech and language support sessions help learners improve communication, listening, vocabulary, pronunciation, expression, and social interaction skills through engaging and interactive activities.</p>
+        </div>
+
+        <div class="card">
+          <h5>Occupational Therapy Enrichment</h5>
+          <p>We provide enriching activities that support coordination, independence, focus, sensory processing, and everyday developmental skills through guided movement and structured play.</p>
+        </div>
+
+        <div class="card">
+          <h5>Social Communication Groups</h5>
+          <p>These group sessions help children develop confidence in social settings while improving conversation skills, emotional understanding, teamwork, listening, and positive peer interaction.</p>
+        </div>
+
+        <div class="card">
+          <h5>Fine Motor & Sensory Regulation</h5>
+          <p>Our programmes focus on strengthening fine motor development, hand coordination, concentration, and sensory regulation through fun, hands-on learning experiences tailored to individual needs.</p>
+        </div>
+
+        <blockquote class="quote">
+          "Every child learns differently, and every learner deserves support that celebrates their unique strengths.”
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section>
+      <h2>WHY CHOOSE <b>SMARTIE PANTS</b>?</h2>
+      <ul class="features-list">
+        <li>Inclusive and supportive learning environment</li>
+        <li>Child-centered educational approach</li>
+        <li>Safe, nurturing, and engaging spaces</li>
+        <li>Individualized learning support</li>
+        <li>Passionate and caring educators</li>
+        <li>Creative and interactive learning experiences</li>
+      </ul>
+    </section>
+
+    <!-- DEDICATED CONTACT US SECTION -->
+    <section id="contact-us">
+      <h2>CONTACT US</h2>
+      <div class="contact-box">
+        <p>We would love to hear from you! Get in touch with us to discuss your child's unique learning needs or setup a custom consultation.</p>
+        <ul class="contact-list">
+          <li>📞 <b>Phone:</b> <a href="tel:+27765285262">+27 76 528 5262</a></li>
+          <li>✉️ <b>Email:</b> <a href="mailto:Jessica.phetoe@gmail.com">Jessica.phetoe@gmail.com</a></li>
+        </ul>
+        <br>
+        <button class="btn" onclick="document.getElementById('enrollModal').style.display = 'flex'">Send a Message</button>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ENROLLMENT MODAL FORM -->
+  <div class="modal" id="enrollModal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeFormBtn">&times;</span>
+      <h3 style="color: var(--primary-blue); margin-bottom: 20px; text-align: center;">Enrollment Inquiry</h3>
+      <form action="mailto:Jessica.phetoe@gmail.com" method="post" enctype="text/text/plain">
+        <div class="form-group">
+          <label>Parent/Guardian Name</label>
+          <input type="text" name="Parent Name" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label>Child's Age</label>
+          <input type="number" name="Child Age" required placeholder="5">
+        </div>
+        <div class="form-group">
+          <label>Desired Program</label>
+          <select name="Program">
+            <option>Inclusive Preschool</option>
+            <option>Sensory Play Group</option>
+            <option>School Readiness</option>
+            <option>Homework / Tutoring Club</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Contact Number</label>
+          <input type="tel" name="Phone" required placeholder="076 528 5262">
+        </div>
+        <button type="submit" class="btn" style="width: 100%; padding: 12px; margin-top: 10px;">Submit Application</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ENLARGED FLOATING QUICK ACTIONS DOCK -->
+  <div class="contact-dock">
+    <a href="https://wa.me/27765285262" class="dock-btn dock-whatsapp" target="_blank">
+      <span class="icon">💬</span>
+      <span>WhatsApp</span>
+    </a>
+    <a href="tel:+27765285262" class="dock-btn dock-call">
+      <span class="icon">📞</span>
+      <span>Call Us</span>
+    </a>
+    <a href="mailto:Jessica.phetoe@gmail.com" class="dock-btn dock-email">
+      <span class="icon">✉️</span>
+      <span>Email</span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <h3><b>Smartie Pants</b> Learning Centre</h3>
+    <p>Empowering every colourful learner with confidence, joy, and dignity.</p>
+    <p style="margin-top: 15px; font-size: 0.8rem; border-top: 1px solid #4A4E69; padding-top: 15px;">&copy; 2026 <b>Smartie Pants</b>. All Rights Reserved. Designed by WildCode.</p>
+  </footer>
+
+  <!-- FORM JAVASCRIPT LOGIC -->
+  <script>
+    const modal = document.getElementById('enrollModal');
+    const openBtn = document.getElementById('openFormBtn');
+    const closeBtn = document.getElementById('closeFormBtn');
+
+    openBtn.onclick = function() { modal.style.display = 'flex'; }
+    closeBtn.onclick = function() { modal.style.display = 'none'; }
+    window.onclick = function(event) { if (event.target == modal) { modal.style.display = 'none'; } }
+  </script>
+
+</body>
+  </html>
