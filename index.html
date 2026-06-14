@@ -3,24 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>smartiepants.com</title>
-  <!-- Google Fonts for a friendly, professional kid-centric vibe -->
+  <title>Smartie Pants | Elite Early Learning Centre</title>
+  
+  <!-- Google Fonts - Luxury & Modern Rounded Hierarchy -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
   
   <style>
-    /* --- CUSTOMER FRIENDLY PINK & BLUE BRANDING --- */
+    /* --- ELITE LUXURY BRAND ARCHITECTURE --- */
     :root {
-      --primary-blue: #3A86FF;
-      --soft-blue: #EBF2FF;
-      --primary-pink: #FF006E;
-      --soft-pink: #FFE5EC;
-      --text-dark: #2B2D42;
-      --text-light: #6C757D;
-      --pure-white: #FFFFFF;
-      --card-shadow: 0 8px 24px rgba(58, 134, 255, 0.12);
-      --radius: 16px;
+      --brand-royal: #1E40AF;       /* Deep Luxury Trust Blue */
+      --brand-accent: #3B82F6;      /* Electric Edit Blue */
+      --brand-rose: #E11D48;        /* Editorial Rose Pink */
+      --brand-blush: #FFF1F2;       /* Premium Soft Rose Cream */
+      --brand-cream: #F8FAFC;       /* Off-White Gallery Background */
+      --text-main: #0F172A;         /* Slate 900 Deep Tech Dark */
+      --text-muted: #64748B;        /* Slate 500 Editorial Gray */
+      --glass-bg: rgba(255, 255, 255, 0.75);
+      --glass-border: rgba(255, 255, 255, 0.6);
+      --shadow-premium: 0 20px 40px -15px rgba(15, 23, 42, 0.06);
+      --shadow-hover: 0 30px 60px -15px rgba(30, 64, 175, 0.12);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --easing: cubic-bezier(0.16, 1, 0.3, 1); /* Premium Cinematic Motion */
     }
 
     * {
@@ -30,255 +36,296 @@
     }
 
     body {
-      font-family: 'Quicksand', sans-serif;
-      color: var(--text-dark);
-      /* FULL SITE BACKGROUND */
-      background: linear-gradient(180deg, var(--soft-blue) 0%, var(--soft-pink) 100%);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 500;
+      color: var(--text-main);
+      background: radial-gradient(circle at top left, #EFF6FF 0%, #FFF1F2 40%, #F8FAFC 80%);
       background-attachment: fixed;
-      line-height: 1.6;
-      padding-bottom: 110px; /* Extra spacing for the enlarged mobile dock */
+      line-height: 1.7;
+      padding-bottom: 130px;
+      -webkit-font-smoothing: antialiased;
     }
 
     h1, h2, h3, h4, h5, .btn {
       font-family: 'Fredoka', sans-serif;
+      letter-spacing: -0.02em;
     }
 
-    /* --- HEADER & HERO SECTION --- */
+    /* --- PREMIUM HEADER & HERO --- */
     header {
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(10px);
-      padding: 40px 20px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 80px 24px 60px 24px;
       text-align: center;
-      border-radius: 0 0 32px 32px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-radius: 0 0 48px 48px;
+      box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.04);
+      border-bottom: 1px solid var(--glass-border);
     }
 
     .logo-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
-      margin-bottom: 15px;
+      gap: 20px;
+      margin-bottom: 24px;
     }
 
     .logo-img {
-      width: 100%;
-      max-width: 170px;
-      height: auto;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-      transition: transform 0.3s ease;
+      border: 6px solid #fff;
+      box-shadow: 0 12px 35px rgba(30, 64, 175, 0.15);
+      transition: transform 0.6s var(--easing);
     }
 
-    .logo-img:hover {
-      transform: scale(1.05);
+    header:hover .logo-img {
+      transform: scale(1.04) rotate(2deg);
     }
 
     h1 {
-      color: var(--primary-blue);
-      font-size: 2.5rem;
-      letter-spacing: 1px;
+      font-size: 3.2rem;
+      color: var(--brand-royal);
+      font-weight: 700;
     }
 
     h1 span {
-      color: var(--primary-pink);
+      color: var(--brand-rose);
+      position: relative;
     }
 
     h4 {
-      color: var(--primary-pink);
-      font-size: 1.2rem;
-      margin-bottom: 15px;
+      color: var(--brand-rose);
+      font-size: 1.4rem;
+      margin-bottom: 20px;
       font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .hero-p {
-      max-width: 600px;
-      margin: 0 auto 25px auto;
-      font-size: 1.1rem;
-      color: var(--text-dark);
+      max-width: 700px;
+      margin: 0 auto 35px auto;
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      font-weight: 400;
     }
 
-    /* --- BUTTONS --- */
+    /* --- ELITE INTERACTION BUTTONS --- */
     .btn {
-      background-color: var(--primary-pink);
-      color: var(--pure-white);
+      background: linear-gradient(135deg, var(--brand-rose) 0%, #C01048 100%);
+      color: #fff;
       border: none;
-      padding: 15px 40px;
-      font-size: 1.2rem;
-      border-radius: 50px;
+      padding: 18px 50px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      border-radius: 100px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 20px rgba(255, 0, 110, 0.3);
+      transition: all 0.5s var(--easing);
+      box-shadow: 0 10px 30px rgba(225, 29, 72, 0.25);
       display: inline-block;
       text-decoration: none;
     }
 
     .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(255, 0, 110, 0.45);
-      background-color: #E0005F;
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(225, 29, 72, 0.4);
+      filter: brightness(1.1);
     }
 
-    /* --- MAIN CONTENT STRUCTURES --- */
+    /* --- LAYOUT CONTAINER --- */
     .container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 80px 24px;
     }
 
     section {
-      margin-bottom: 50px;
+      margin-bottom: 120px;
     }
 
     h2 {
-      color: var(--primary-blue);
-      font-size: 1.8rem;
-      margin-bottom: 25px;
+      color: var(--brand-royal);
+      font-size: 2.4rem;
+      margin-bottom: 50px;
       text-align: center;
-      position: relative;
-      padding-bottom: 10px;
+      font-weight: 700;
     }
 
     h2::after {
       content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 4px;
-      background-color: var(--primary-pink);
-      border-radius: 2px;
+      display: block;
+      width: 50px;
+      height: 6px;
+      background: var(--brand-rose);
+      border-radius: 10px;
+      margin: 15px auto 0 auto;
     }
 
+    /* --- EDITORIAL TEXT BLOCKS --- */
     .about-box, .vision-box, .contact-box {
-      background: var(--pure-white);
-      padding: 30px;
-      border-radius: var(--radius);
-      box-shadow: var(--card-shadow);
-      margin-bottom: 30px;
+      background: #fff;
+      padding: 60px 50px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-premium);
+      border: 1px solid rgba(15, 23, 42, 0.03);
       text-align: center;
+    }
+
+    .about-box p, .vision-box p, .contact-box p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 850px;
+      margin: 0 auto;
     }
 
     .section-img {
       width: 100%;
-      max-width: 550px;
-      height: auto;
-      border-radius: var(--radius);
-      margin-bottom: 20px;
+      max-width: 700px;
+      height: 380px;
+      border-radius: var(--radius-md);
+      margin-bottom: 40px;
       object-fit: cover;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.04);
     }
 
-    /* --- CARDS GRID --- */
+    /* --- STUDIED SYSTEM GRID --- */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 35px;
     }
 
     .card {
-      background: var(--pure-white);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--card-shadow);
-      border-top: 5px solid var(--primary-blue);
-      transition: transform 0.3s ease;
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 40px 30px;
+      box-shadow: var(--shadow-premium);
+      border: 1px solid rgba(15, 23, 42, 0.02);
+      border-top: 6px solid var(--brand-royal);
+      transition: all 0.5s var(--easing);
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
     }
 
     .card:nth-child(even) {
-      border-top-color: var(--primary-pink);
+      border-top-color: var(--brand-rose);
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
     }
 
     .card img {
       width: 100%;
-      height: 180px;
+      height: 220px;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: var(--radius-md);
     }
 
     .card h5 {
-      color: var(--text-dark);
-      font-size: 1.25rem;
+      color: var(--brand-royal);
+      font-size: 1.45rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
     }
 
     .quote {
       grid-column: 1 / -1;
-      background: linear-gradient(to right, var(--soft-pink), var(--soft-blue));
-      padding: 30px;
-      border-left: 6px solid var(--primary-pink);
-      border-radius: var(--radius);
-      font-size: 1.20rem;
+      background: linear-gradient(135deg, #FFF1F2 0%, #EFF6FF 100%);
+      padding: 50px;
+      border-left: 8px solid var(--brand-rose);
+      border-radius: var(--radius-lg);
+      font-size: 1.5rem;
       font-style: italic;
       font-weight: 600;
       text-align: center;
-      color: var(--text-dark);
-      margin: 20px 0;
+      color: var(--brand-royal);
+      margin: 30px 0;
+      box-shadow: var(--shadow-premium);
     }
 
-    /* --- WHY CHOOSE US LIST --- */
+    /* --- PREMIUM ROW ACCENTS --- */
     .features-list {
-      background: var(--pure-white);
-      padding: 30px;
-      border-radius: var(--radius);
-      box-shadow: var(--card-shadow);
+      background: #fff;
+      padding: 50px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-premium);
       list-style: none;
-      max-width: 700px;
+      max-width: 900px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
     }
 
     .features-list li {
       position: relative;
-      padding-left: 35px;
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      text-align: left;
+      padding-left: 45px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
     }
 
     .features-list li::before {
-      content: '✏️';
+      content: '✓';
       position: absolute;
       left: 0;
       top: -2px;
-      font-size: 1.2rem;
+      width: 26px;
+      height: 26px;
+      background: var(--brand-blush);
+      color: var(--brand-rose);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 700;
     }
 
-    /* --- DEDICATED CONTACT SECTION --- */
+    /* --- DEDICATED CONTACT AREA --- */
     .contact-box {
-      max-width: 600px;
+      max-width: 750px;
       margin: 0 auto;
     }
 
     .contact-list {
       list-style: none;
-      margin-top: 15px;
+      margin: 35px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
     }
 
     .contact-list li {
-      font-size: 1.2rem;
-      margin: 12px 0;
-      font-weight: 600;
+      font-size: 1.4rem;
+      font-weight: 700;
     }
 
     .contact-list a {
-      color: var(--primary-blue);
+      color: var(--brand-royal);
       text-decoration: none;
-      transition: color 0.3s;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
     }
 
     .contact-list a:hover {
-      color: var(--primary-pink);
+      color: var(--brand-rose);
+      border-bottom-color: var(--brand-rose);
     }
 
-    /* --- MODAL FORM CONTAINER --- */
+    /* --- ARCHITECTURAL MODAL DIALOG --- */
     .modal {
       display: none;
       position: fixed;
@@ -286,144 +333,259 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 1000;
+      background-color: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 100000;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 24px;
     }
 
     .modal-content {
-      background-color: var(--pure-white);
-      padding: 30px;
-      border-radius: var(--radius);
-      max-width: 500px;
+      background-color: #fff;
+      padding: 50px 40px;
+      border-radius: var(--radius-lg);
+      max-width: 550px;
       width: 100%;
       position: relative;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      animation: popUp 0.3s ease-out;
+      box-shadow: 0 30px 70px rgba(15, 23, 42, 0.15);
+      animation: popUp 0.5s var(--easing) forwards;
     }
 
     @keyframes popUp {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+      from { transform: translateY(20px) scale(0.96); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
     }
 
     .close-modal {
       position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 2rem;
+      top: 25px;
+      right: 30px;
+      font-size: 2.5rem;
       cursor: pointer;
-      color: var(--text-light);
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+      line-height: 1;
+    }
+
+    .close-modal:hover {
+      color: var(--brand-rose);
     }
 
     .form-group {
-      margin-bottom: 15px;
+      margin-bottom: 25px;
+      text-align: left;
     }
 
     .form-group label {
       display: block;
-      margin-bottom: 5px;
-      font-weight: 600;
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text-main);
     }
 
     .form-group input, .form-group select {
       width: 100%;
-      padding: 12px;
-      border: 2px solid var(--soft-blue);
-      border-radius: 8px;
+      padding: 16px;
+      border: 2px solid #E2E8F0;
+      border-radius: 14px;
       font-family: inherit;
+      font-size: 1.05rem;
+      color: var(--text-main);
+      transition: all 0.3s ease;
+      background-color: #F8FAFC;
     }
 
-    /* --- FIXED & SECURITY PROOFED MOBILE ACTIONS DOCK --- */
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--brand-royal);
+      background-color: #fff;
+      box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.08);
+    }
+
+    /* --- PREMIUM QUICK ACTION NAV DOCK --- */
     .contact-dock {
       position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: var(--pure-white);
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 48px);
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 12px 6px;
-      box-shadow: 0 -6px 25px rgba(0,0,0,0.15);
-      z-index: 99999; /* Forces deck to stay on top of everything */
-      border-radius: 24px 24px 0 0;
+      padding: 14px 20px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+      z-index: 99999;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
     }
 
     .dock-btn {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-weight: 700;
       gap: 6px;
       flex: 1;
-      height: 100%;
-      padding: 6px 0;
       cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
     }
 
-    /* Fixed Tap Target Areas: Children inherit pointer activity flawlessly */
     .dock-btn * {
       pointer-events: none;
     }
 
-    /* Super-sized clickable structural icons */
     .dock-btn .icon {
-      font-size: 1.8rem;
-      width: 58px;
-      height: 58px;
+      font-size: 1.5rem;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
-      transition: transform 0.2s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      transition: transform 0.4s var(--easing);
     }
 
-    .dock-btn:active .icon {
-      transform: scale(0.9);
+    .dock-btn:hover .icon {
+      transform: translateY(-5px) scale(1.05);
     }
 
     .dock-whatsapp .icon { background-color: #25D366; }
-    .dock-whatsapp { color: #21b858; }
-    .dock-call .icon { background-color: #3A86FF; }
-    .dock-call { color: #3A86FF; }
-    .dock-email .icon { background-color: #FF006E; }
-    .dock-email { color: #FF006E; }
+    .dock-whatsapp { color: #1ea34e; }
+    .dock-call .icon { background-color: var(--brand-royal); }
+    .dock-call { color: var(--brand-royal); }
+    .dock-email .icon { background-color: var(--brand-rose); }
+    .dock-email { color: var(--brand-rose); }
 
+    /* --- PREMIUM FOOTER --- */
     footer {
-      background-color: var(--text-dark);
-      color: #AEB3C0;
+      background-color: var(--text-main);
+      color: #94A3B8;
       text-align: center;
-      padding: 40px 20px 140px 20px; /* Base cushion protection */
-      font-size: 0.9rem;
+      padding: 80px 24px 160px 24px;
+      font-size: 1rem;
+      border-radius: 48px 48px 0 0;
     }
 
     footer h3 {
-      color: var(--pure-white);
-      margin-bottom: 10px;
+      color: #fff;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
     }
+
+    footer hr {
+      border: none;
+      border-top: 1px solid #334155;
+      margin: 35px 0;
+    }
+
+    /* --- HIGH END RESPONSE MATRIX --- */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.9rem; }
+      .section-img { height: 260px; }
+      .about-box, .vision-box, .contact-box { padding: 40px 24px; }
+      .features-list { grid-template-columns: 1fr; padding: 35px 24px; }
+      .container { padding: 50px 20px; }
+    }
+    /* Background Video Container - Fixed and Full Screen */
+.bg-video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Pushes video behind everything */
+  overflow: hidden;
+}
+
+.bg-video-container iframe {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: blur(8px) brightness(0.6); /* Blur and darken for readability */
+  pointer-events: none;
+}
+
+/* Ensure body sections have transparent backgrounds so the video shows through */
+header, .about-box, .vision-box, .card, .features-list, .contact-box {
+  background: rgba(255, 255, 255, 0.85) !important; /* Semi-transparent white */
+  backdrop-filter: blur(10px);
+}
+header {
+  background: transparent !important; /* Removes the white box */
+  backdrop-filter: none;              /* Removes the blur */
+  padding: 80px 24px 60px 24px;
+  text-align: center;
+  /* Add a text shadow to keep it visible against the video */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+}
+
+/* Ensure the header text stays white or a high-contrast color */
+header h1, header h4, header p {
+  color: #FFFFFF !important;
+}
+
+header h1 span {
+  color: #FFD1DC !important; /* Lighter pink for better contrast on video */
+}
+body {
+  /* ... keep existing styles ... */
+  color: #0F172A; /* Ensure this is deep dark */
+}
+
+/* Add this to make text pop on the video */
+.about-box, .vision-box, .card, .features-list, .contact-box {
+  background: rgba(255, 255, 255, 0.9) !important; /* Slightly more solid */
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Make specific text bolder */
+p{
+  text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+}
+.bold-white-text {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  font-size: 1.3rem !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6); /* Dark shadow makes white text readable */
+  padding: 10px; /* Adds breathing room */
+}
+
+
+
   </style>
 </head>
 <body>
+  <div class="bg-video-container">
+    <iframe 
+      src="https://streamable.com/e/5pagls?autoplay=1&muted=1&controls=0&loop=1&nocontrols=1" 
+      allow="autoplay; fullscreen" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
 
   <!-- HERO HEADER -->
   <header>
     <div class="logo-container">
-      <a href="https://ibb.co/ZC6Jq5t">
-        <img src="https://i.ibb.co/1xfnF1h/1779464377357.png" alt="Smartie Pants Logo" class="logo-img" border="0">
-      </a>
+      <img src="https://i.ibb.co/1xfnF1h/1779464377357.png" alt="Smartie Pants Executive Logo" class="logo-img">
       <h1><b>SMARTIE</b> <span><b>PANTS</b></span></h1>
     </div>
     <h4>Empowering every colourful learner</h4>
-    <p class="hero-p">At <b><b>Smartie Pants</b></b>, we create a <b>safe, inclusive, and nurturing learning environment</b> where every child is encouraged to grow, explore, and thrive at their own pace.</p>
+    <p class="hero-p">At <b>Smartie Pants</b>, we create a <b>safe, inclusive, and nurturing learning environment</b> where every child is encouraged to grow, explore, and thrive at their own pace.</p>
     <button class="btn" id="openFormBtn">Enroll Today</button>
   </header>
 
@@ -433,10 +595,8 @@
     <section>
       <h2>ABOUT <b>SMARTIE PANTS</b></h2>
       <div class="about-box">
-        <a href="https://ibb.co/FLV4cnjV">
-          <img src="https://i.ibb.co/NdS2f7HS/Leonardo-Phoenix-Create-a-image-illustrating-an-African-classr-3.jpg" alt="African classroom support illustration" class="section-img" border="0">
-        </a>
-        <p><b><b>Smartie Pants</b></b> is a dedicated inclusive learning centre focused on supporting young learners through engaging educational experiences, developmental activities, and individualized learning support. We believe that every child deserves the opportunity to learn with confidence, joy, and dignity regardless of their abilities or learning style.</p>
+        <img src="https://i.ibb.co/NdS2f7HS/Leonardo-Phoenix-Create-a-image-illustrating-an-African-classr-3.jpg" alt="African classroom support illustration" class="section-img">
+        <p><b>Smartie Pants</b> is a dedicated inclusive learning centre focused on supporting young learners through engaging educational experiences, developmental activities, and individualized learning support. We believe that every child deserves the opportunity to learn with confidence, joy, and dignity regardless of their abilities or learning style.</p>
         <br>
         <p>Our goal is to create meaningful learning experiences that build confidence, independence, creativity, and school readiness while embracing every learner’s uniqueness.</p>
       </div>
@@ -446,12 +606,12 @@
     <section>
       <h2>OUR MISSION & VISION</h2>
       <div class="vision-box">
-        <img src="https://i.ibb.co/xSwGn3sc/our-mission.jpg" alt="our mission" class="section-img" border="0">
+        <img src="https://i.ibb.co/xSwGn3sc/our-mission.jpg" alt="Our Mission Statement" class="section-img">
         <p>To become a trusted and inspiring learning space where every child feels valued, included, supported, and empowered to succeed academically, socially, and emotionally.</p>
-        <br><hr style="border: 1px solid var(--soft-blue); margin: 20px 0;"><br>
-        <a href="https://ibb.co/b5y1C5B1">
-          <img src="https://i.ibb.co/TMnc7M8c/diverse-small-schoolchildren-putting-hands-together-classroom-teamwok-children-concept-excited-group.jpg" alt="diverse school children teamwork" class="section-img" border="0">
-        </a>
+        <br>
+        <hr style="border: none; border-top: 2px solid #F1F5F9; margin: 35px 0;">
+        <br>
+        <img src="https://i.ibb.co/TMnc7M8c/diverse-small-schoolchildren-putting-hands-together-classroom-teamwok-children-concept-excited-group.jpg" alt="Diverse schoolchildren working together" class="section-img">
         <p>To become a <b>trusted and inspiring</b> learning space where every child feels valued, included, supported, and empowered to succeed academically, socially, and emotionally.</p>
       </div>
     </section>
@@ -462,84 +622,71 @@
       <div class="grid">
         
         <div class="card">
+          <img src="https://i.ibb.co/ccVcH80d/y-edited.jpg" alt="Inclusive Preschool Environment">
           <h5>Inclusive Preschool Classes</h5>
-          <a href="https://ibb.co/tMFMt2g5">
-            <img src="https://i.ibb.co/ccVcH80d/y-edited.jpg" alt="preschool environment" border="0">
-          </a>
           <p>Our inclusive preschool classes provide a warm and engaging environment where children learn through creativity, exploration, play, and structured developmental activities designed to support early childhood growth.</p>
         </div>
 
         <div class="card">
+          <img src="https://i.ibb.co/RTgtyDcN/images-38.jpg" alt="Sensory Play Activities">
           <h5>Sensory Play & Learning Groups</h5>
-          <a href="https://ibb.co/m5Rd8c40">
-            <img src="https://i.ibb.co/RTgtyDcN/images-38.jpg" alt="images-38" border="0">
-          </a>
           <p>We offer sensory-based learning experiences that help children strengthen communication, coordination, emotional development, focus, and social interaction through guided play and interactive activities.</p>
         </div>
 
         <div class="card">
+          <img src="https://i.ibb.co/whRC8ssV/Website-Headers.png" alt="School Readiness Preparation">
           <h5>School Readiness Programmes</h5>
-          <a href="https://ibb.co/VYtDbmmR">
-            <img src="https://i.ibb.co/whRC8ssV/Website-Headers.png" alt="School Readiness" border="0">
-          </a>
           <p>Our school readiness programmes prepare children for a successful transition into formal schooling by building confidence, foundational literacy, numeracy, communication, and independent learning skills.</p>
         </div>
 
         <div class="card">
+          <img src="https://i.ibb.co/3VK7J1C/black-family-mother-child-reading-260nw-2308188711.jpg" alt="Mother and child reading together">
           <h5>Parent & Child Learning Sessions</h5>
-          <a href="https://imgbb.com/">
-            <img src="https://i.ibb.co/3VK7J1C/black-family-mother-child-reading-260nw-2308188711.jpg" alt="mother and child reading" border="0">
-          </a>
           <p>These sessions encourage meaningful parent-child interaction through guided educational activities that strengthen learning, communication, emotional bonding, and developmental support at home.</p>
         </div>
 
         <div class="card">
+          <img src="https://i.ibb.co/3yH9nt8T/kids-learning-together-stockcake.jpg" alt="Children completing homework collaboratively">
           <h5>Homework Support Clubs</h5>
-          <a href="https://ibb.co/PZ8vdBbr">
-            <img src="https://i.ibb.co/3yH9nt8T/kids-learning-together-stockcake.jpg" alt="kids learning together" border="0">
-          </a>
           <p>We provide supportive homework assistance in a calm and encouraging environment where learners receive guidance, motivation, and academic support tailored to their individual needs.</p>
         </div>
 
         <div class="card">
+          <img src="https://i.ibb.co/whDkDTBb/czupryk-reading.jpg" alt="Child reading book closely">
           <h5>Reading & Literacy Intervention</h5>
-          <a href="https://ibb.co/hFp6pkLn">
-            <img src="https://i.ibb.co/whDkDTBb/czupryk-reading.jpg" alt="child reading" border="0">
-          </a>
           <p>Our literacy support programmes focus on improving reading confidence, comprehension, vocabulary, spelling, and language development using engaging and learner-friendly strategies.</p>
         </div>
 
         <div class="card">
+          <img src="https://i.ibb.co/Y5TZWnH/istockphoto-639407632-612x612.jpg" alt="Children interacting with STEM models">
           <h5>Inclusive STEM Programmes</h5>
-          <a href="https://imgbb.com/">
-            <img src="https://i.ibb.co/Y5TZWnH/istockphoto-639407632-612x612.jpg" alt="STEM activities" border="0">
-          </a>
           <p>Children are introduced to exciting Science, Technology, Engineering, and Mathematics activities that encourage creativity, curiosity, teamwork, and problem-solving in an inclusive learning environment.</p>
         </div>
 
         <div class="card">
+          <img src="https://i.ibb.co/204k4t7T/istockphoto-1343515308-612x612.jpg" alt="One on one specialized tutoring">
           <h5>Individualized Tutoring Support</h5>
-          <a href="https://imgbb.com/">
-            <img src="https://i.ibb.co/204k4t7T/istockphoto-1343515308-612x612.jpg" alt="one on one tutoring" border="0">
-          </a>
           <p>We provide personalized tutoring sessions designed to support learners with diverse educational needs by focusing on each child’s strengths, pace, and learning style.</p>
         </div>
 
         <div class="card">
+          <img src="https://i.ibb.co/ycrmswbK/school-young-african-american-boy-600nw-2526764163.jpg" alt="Student using assistive digital interface">
           <h5>Assistive Technology Support</h5>
-          <a href="https://imgbb.com/">
-            <img src="https://i.ibb.co/ycrmswbK/school-young-african-american-boy-600nw-2526764163.jpg" alt="school young african american boy 600nw 2526764163" border="0">
-          </a>
           <p>We help learners use educational technology and supportive tools that improve communication, participation, independence, and access to learning opportunities.</p>
         </div>
 
       </div>
     </section>
-
-    <!-- THERAPY INTEGRATION -->
-    <section>
-      <h2>Therapy-Integrated Education</h2>
-      <p style="text-align: center; max-width: 800px; margin: 0 auto 30px auto; font-size: 1.1rem;">At <b><b>Smartie Pants</b></b>, we combine education with developmental support to create a holistic learning experience for every child. Our therapy-integrated programmes are designed to strengthen communication, motor development, sensory regulation, confidence, and social interaction in a supportive and inclusive environment.</p>
+<!-- THERAPY INTEGRATION -->
+<section>
+  <h2>Therapy-Integrated Education</h2>
+  
+  <!-- Add the class="bold-white-text" right here -->
+  <p class="bold-white-text" style="text-align: center; max-width: 850px; margin: 0 auto 50px auto;">
+    At <b>Smartie Pants</b>, we combine education with developmental support to create a holistic learning experience for every child. Our therapy-integrated programmes are designed to strengthen communication, motor development, sensory regulation, confidence, and social interaction in a supportive and inclusive environment.
+  </p>
+  
+  <div class="grid">
       
       <div class="grid">
         <div class="card">
@@ -587,11 +734,10 @@
       <div class="contact-box">
         <p>We would love to hear from you! Get in touch with us to discuss your child's unique learning needs or setup a custom consultation.</p>
         <ul class="contact-list">
-          <li>📞 <b>Phone:</b> <a href="tel:+27765285262">+27 76 528 5262</a></li>
-          <li>✉️ <b>Email:</b> <a href="mailto:Jessica.phetoe@gmail.com">Jessica.phetoe@gmail.com</a></li>
+          <li>📞 Phone: <a href="tel:+27765285262">+27 76 528 5262</a></li>
+          <li>✉️ Email: <a href="mailto:Jessica.phetoe@gmail.com">Jessica.phetoe@gmail.com</a></li>
         </ul>
-        <br>
-        <button class="btn" onclick="document.getElementById('enrollModal').style.display = 'flex'">Send a Message</button>
+        <button class="btn" id="messageBoxBtn">Send a Message</button>
       </div>
     </section>
 
@@ -601,37 +747,37 @@
   <div class="modal" id="enrollModal">
     <div class="modal-content">
       <span class="close-modal" id="closeFormBtn">&times;</span>
-      <h3 style="color: var(--primary-blue); margin-bottom: 20px; text-align: center;">Enrollment Inquiry</h3>
-      <form action="mailto:Jessica.phetoe@gmail.com" method="post" enctype="text/text/plain">
+      <h3 style="color: var(--brand-royal); margin-bottom: 30px; text-align: center; font-size: 1.8rem;">Enrollment Inquiry</h3>
+      <form action="mailto:Jessica.phetoe@gmail.com" method="post" enctype="text/plain">
         <div class="form-group">
           <label>Parent/Guardian Name</label>
-          <input type="text" name="Parent Name" required placeholder="John Doe">
+          <input type="text" name="Parent_Name" required placeholder="John Doe">
         </div>
         <div class="form-group">
           <label>Child's Age</label>
-          <input type="number" name="Child Age" required placeholder="5">
+          <input type="number" name="Child_Age" required placeholder="5">
         </div>
         <div class="form-group">
           <label>Desired Program</label>
           <select name="Program">
-            <option>Inclusive Preschool</option>
-            <option>Sensory Play Group</option>
-            <option>School Readiness</option>
-            <option>Homework / Tutoring Club</option>
+            <option value="Inclusive Preschool">Inclusive Preschool</option>
+            <option value="Sensory Play Group">Sensory Play Group</option>
+            <option value="School Readiness">School Readiness</option>
+            <option value="Homework / Tutoring Club">Homework / Tutoring Club</option>
           </select>
         </div>
         <div class="form-group">
           <label>Contact Number</label>
           <input type="tel" name="Phone" required placeholder="076 528 5262">
         </div>
-        <button type="submit" class="btn" style="width: 100%; padding: 12px; margin-top: 10px;">Submit Application</button>
+        <button type="submit" class="btn" style="width: 100%; padding: 16px; margin-top: 15px; font-size: 1.2rem;">Submit Application</button>
       </form>
     </div>
   </div>
 
-  <!-- ENLARGED FLOATING QUICK ACTIONS DOCK -->
+  <!-- FLOATING FLOATING NAV DOCK -->
   <div class="contact-dock">
-    <a href="https://wa.me/27765285262" class="dock-btn dock-whatsapp" target="_blank">
+    <a href="https://wa.me/27765285262" class="dock-btn dock-whatsapp" target="_blank" rel="noopener noreferrer">
       <span class="icon">💬</span>
       <span>WhatsApp</span>
     </a>
@@ -647,21 +793,32 @@
 
   <!-- FOOTER -->
   <footer>
-    <h3><b>Smartie Pants</b> Learning Centre</h3>
+    <h3>Smartie Pants Learning Centre</h3>
     <p>Empowering every colourful learner with confidence, joy, and dignity.</p>
-    <p style="margin-top: 15px; font-size: 0.8rem; border-top: 1px solid #4A4E69; padding-top: 15px;">&copy; 2026 <b>Smartie Pants</b>. All Rights Reserved. Designed by WildCode.</p>
+    <hr>
+    <p style="font-size: 0.9rem; color: #64748B;">&copy; 2026 <b>Smartie Pants</b>. All Rights Reserved. Designed by WildCode.</p>
   </footer>
 
-  <!-- FORM JAVASCRIPT LOGIC -->
+  <!-- ACTION DIALOG SCRIPT -->
   <script>
     const modal = document.getElementById('enrollModal');
     const openBtn = document.getElementById('openFormBtn');
+    const contactSectionBtn = document.getElementById('messageBoxBtn');
     const closeBtn = document.getElementById('closeFormBtn');
 
-    openBtn.onclick = function() { modal.style.display = 'flex'; }
-    closeBtn.onclick = function() { modal.style.display = 'none'; }
-    window.onclick = function(event) { if (event.target == modal) { modal.style.display = 'none'; } }
+    const displayModal = function() { modal.style.display = 'flex'; }
+    const hideModal = function() { modal.style.display = 'none'; }
+
+    openBtn.onclick = displayModal;
+    contactSectionBtn.onclick = displayModal;
+    closeBtn.onclick = hideModal;
+    
+    window.onclick = function(event) { 
+      if (event.target === modal) { 
+        hideModal(); 
+      } 
+    }
   </script>
 
 </body>
-  </html>
+</html>
