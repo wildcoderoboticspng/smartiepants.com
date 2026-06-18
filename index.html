@@ -563,24 +563,40 @@ p{
   text-shadow: 0 2px 8px rgba(0,0,0,0.6); /* Dark shadow makes white text readable */
   padding: 10px; /* Adds breathing room */
 }
+<!-- Move this to the very top, immediately after <body> -->
+<div class="bg-video-container">
+  <iframe src="https://streamable.com/e/2l7izf?autoplay=1&muted=1&loop=1" 
+          frameborder="0" allowfullscreen></iframe>
+</div>
+.bg-video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none; /* Prevents video from blocking clicks */
+  overflow: hidden;
+}
+
+.bg-video-container iframe {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  pointer-events: none;
+}
 
 
 
   </style>
 </head>
 <body>
-  <div style="position:relative; width:100%; 
-    height:0px; padding-bottom:177.778%">
-    <iframe allow="fullscreen;autoplay"
-      allowfullscreen height="100%" 
-      src="https://streamable.com/e/2l7izf?autoplay=
-      1&muted=1" width="100%"
-      style="border:none; width:100%; 
-      height:100%; position:absolute; 
-      left:0px; top:0px; overflow:hidden;">
-      
-      </iframe>
-  </div>
+  <!-- Move this to the very top, immediately after <body> -->
+<div class="bg-video-container">
+  <iframe src="https://streamable.com/e/2l7izf?autoplay=1&muted=1&loop=1" 
+          frameborder="0" allowfullscreen></iframe>
+</div>
+
 
   <!-- HERO HEADER -->
   <header>
