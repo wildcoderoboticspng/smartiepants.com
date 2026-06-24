@@ -20,7 +20,7 @@
       --brand-cream: #F8FAFC;       /* Off-White Gallery Background */
       --text-main: #0F172A;         /* Slate 900 Deep Tech Dark */
       --text-muted: #64748B;        /* Slate 500 Editorial Gray */
-      --glass-bg: rgba(255, 255, 255, 0.75);
+      --glass-bg: rgba(255, 255, 255, 0.85);
       --glass-border: rgba(255, 255, 255, 0.6);
       --shadow-premium: 0 20px 40px -15px rgba(15, 23, 42, 0.06);
       --shadow-hover: 0 30px 60px -15px rgba(30, 64, 175, 0.12);
@@ -39,11 +39,15 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 500;
       color: var(--text-main);
-      background: radial-gradient(circle at top left, #EFF6FF 0%, #FFF1F2 40%, #F8FAFC 80%);
-      background-attachment: fixed;
+      background: #000;
       line-height: 1.7;
       padding-bottom: 130px;
       -webkit-font-smoothing: antialiased;
+    }
+
+    /* Target all bold tags globally to be pink */
+    b, strong {
+      color: var(--brand-rose) !important;
     }
 
     h1, h2, h3, h4, h5, .btn {
@@ -51,16 +55,46 @@
       letter-spacing: -0.02em;
     }
 
+    /* --- BACKGROUND VIDEO WORKHORSE --- */
+    .bg-video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bg-video-container iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 100vh;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: blur(4px) brightness(0.5);
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+      .bg-video-container iframe { height: 56.25vw; }
+    }
+    @media (max-aspect-ratio: 16/9) {
+      .bg-video-container iframe { width: 177.78vh; }
+    }
+
     /* --- PREMIUM HEADER & HERO --- */
     header {
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(15, 23, 42, 0.4) !important;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       padding: 80px 24px 60px 24px;
       text-align: center;
       border-radius: 0 0 48px 48px;
-      box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.04);
-      border-bottom: 1px solid var(--glass-border);
+      box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .logo-container {
@@ -87,20 +121,17 @@
 
     h1 {
       font-size: 3.2rem;
-      color: var(--brand-royal);
+      color: #FFF !important;
       font-weight: 700;
     }
 
-    h1 span {
-      color: var(--brand-rose);
-      position: relative;
-    }
-
-    h4 {
-      color: var(--brand-rose);
-      font-size: 1.4rem;
+    /* Cleaned up high contrast slogan styling */
+    .slogan-text {
+      color: #FFFFFF !important;
+      text-shadow: 0 2px 12px rgba(225, 29, 72, 0.7);
+      font-size: 1.6rem;
       margin-bottom: 20px;
-      font-weight: 500;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
@@ -109,7 +140,7 @@
       max-width: 700px;
       margin: 0 auto 35px auto;
       font-size: 1.25rem;
-      color: var(--text-muted);
+      color: #E2E8F0;
       font-weight: 400;
     }
 
@@ -135,11 +166,16 @@
       filter: brightness(1.1);
     }
 
-    /* --- LAYOUT CONTAINER --- */
+    /* --- LAYOUT CONTAINER & MARGIN ACCENTS --- */
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 80px 24px;
+      padding: 80px 40px;
+      position: relative;
+      /* Pink structural margin borders styling */
+      border-left: 6px solid var(--brand-rose);
+      border-right: 6px solid var(--brand-rose);
+      background: rgba(0, 0, 0, 0.15);
     }
 
     section {
@@ -147,7 +183,8 @@
     }
 
     h2 {
-      color: var(--brand-royal);
+      color: #FFFFFF;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
       font-size: 2.4rem;
       margin-bottom: 50px;
       text-align: center;
@@ -166,17 +203,18 @@
 
     /* --- EDITORIAL TEXT BLOCKS --- */
     .about-box, .vision-box, .contact-box {
-      background: #fff;
+      background: var(--glass-bg) !important;
+      backdrop-filter: blur(15px);
       padding: 60px 50px;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-premium);
-      border: 1px solid rgba(15, 23, 42, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.5);
       text-align: center;
     }
 
     .about-box p, .vision-box p, .contact-box p {
       font-size: 1.2rem;
-      color: var(--text-muted);
+      color: var(--text-main);
       max-width: 850px;
       margin: 0 auto;
     }
@@ -188,7 +226,7 @@
       border-radius: var(--radius-md);
       margin-bottom: 40px;
       object-fit: cover;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     }
 
     /* --- STUDIED SYSTEM GRID --- */
@@ -199,11 +237,12 @@
     }
 
     .card {
-      background: #fff;
+      background: var(--glass-bg) !important;
+      backdrop-filter: blur(15px);
       border-radius: var(--radius-lg);
       padding: 40px 30px;
       box-shadow: var(--shadow-premium);
-      border: 1px solid rgba(15, 23, 42, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.5);
       border-top: 6px solid var(--brand-royal);
       transition: all 0.5s var(--easing);
       display: flex;
@@ -234,14 +273,14 @@
     }
 
     .card p {
-      color: var(--text-muted);
+      color: var(--text-main);
       font-size: 1.05rem;
       line-height: 1.6;
     }
 
     .quote {
       grid-column: 1 / -1;
-      background: linear-gradient(135deg, #FFF1F2 0%, #EFF6FF 100%);
+      background: linear-gradient(135deg, #FFF1F2 0%, #EFF6FF 100%) !important;
       padding: 50px;
       border-left: 8px solid var(--brand-rose);
       border-radius: var(--radius-lg);
@@ -256,7 +295,8 @@
 
     /* --- PREMIUM ROW ACCENTS --- */
     .features-list {
-      background: #fff;
+      background: var(--glass-bg) !important;
+      backdrop-filter: blur(15px);
       padding: 50px;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-premium);
@@ -497,115 +537,27 @@
       .section-img { height: 260px; }
       .about-box, .vision-box, .contact-box { padding: 40px 24px; }
       .features-list { grid-template-columns: 1fr; padding: 35px 24px; }
-      .container { padding: 50px 20px; }
+      .container { padding: 50px 15px; border-left-width: 4px; border-right-width: 4px; }
     }
-    /* Background Video Container - Fixed and Full Screen */
-.bg-video-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Pushes video behind everything */
-  overflow: hidden;
-}
-
-.bg-video-container iframe {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  filter: blur(8px) brightness(0.6); /* Blur and darken for readability */
-  pointer-events: none;
-}
-
-/* Ensure body sections have transparent backgrounds so the video shows through */
-header, .about-box, .vision-box, .card, .features-list, .contact-box {
-  background: rgba(255, 255, 255, 0.85) !important; /* Semi-transparent white */
-  backdrop-filter: blur(10px);
-}
-header {
-  background: transparent !important; /* Removes the white box */
-  backdrop-filter: none;              /* Removes the blur */
-  padding: 80px 24px 60px 24px;
-  text-align: center;
-  /* Add a text shadow to keep it visible against the video */
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3); 
-}
-
-/* Ensure the header text stays white or a high-contrast color */
-header h1, header h4, header p {
-  color: #FFFFFF !important;
-}
-
-header h1 span {
-  color: #FFD1DC !important; /* Lighter pink for better contrast on video */
-}
-body {
-  /* ... keep existing styles ... */
-  color: #0F172A; /* Ensure this is deep dark */
-}
-
-/* Add this to make text pop on the video */
-.about-box, .vision-box, .card, .features-list, .contact-box {
-  background: rgba(255, 255, 255, 0.9) !important; /* Slightly more solid */
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-/* Make specific text bolder */
-p{
-  text-shadow: 0 1px 2px rgba(255,255,255,0.5);
-}
-.bold-white-text {
-  color: #FFFFFF !important;
-  font-weight: 800 !important;
-  font-size: 1.3rem !important;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.6); /* Dark shadow makes white text readable */
-  padding: 10px; /* Adds breathing room */
-}
-<!-- Move this to the very top, immediately after <body> -->
-<div class="bg-video-container">
-  <iframe src="https://streamable.com/e/2l7izf?autoplay=1&muted=1&loop=1" 
-          frameborder="0" allowfullscreen></iframe>
-</div>
-.bg-video-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none; /* Prevents video from blocking clicks */
-  overflow: hidden;
-}
-
-.bg-video-container iframe {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  pointer-events: none;
-}
-<div style="position:relative; width:100%; height:0px; padding-bottom:177.778%"><iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/hguabj?autoplay=1&muted=1&nocontrols=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
-
-
   </style>
 </head>
 <body>
-  <div style="position:relative; width:100%; height:0px; padding-bottom:177.778%"><iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/hguabj?autoplay=1&muted=1&nocontrols=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+
+  <!-- BACKGROUND VIDEO ARCHITECTURE LAYER -->
+  <div class="bg-video-container">
+    <iframe src="https://streamable.com/e/hguabj?autoplay=1&muted=1&nocontrols=1" allow="fullscreen;autoplay" frameborder="0"></iframe>
+  </div>
 
   <!-- HERO HEADER -->
   <header>
     <div class="logo-container">
-      <img src="https://i.ibb.co/1xfnF1h/1779464377357.png" alt="Smartie Pants Executive Logo" class="logo-img"
-      height="400" width="300">
-      <!-- Pink Smartie, Blue Pants -->
-      <h1 style="color: var(--text-main);">
-        <b style="color: #E11D48;">SMARTIE</b> 
-        <span style="color: #1E40AF;"><b>PANTS</b></span>
+      <img src="https://i.ibb.co/1xfnF1h/1779464377357.png" alt="Smartie Pants Executive Logo" class="logo-img" height="400" width="300">
+      <h1>
+        <span>SMARTIE</span> 
+        <span style="color: #3B82F6 !important;">PANTS</span>
       </h1>
     </div>
-    <!-- Blue Tagline -->
-    <h4 style="color: #1E40AF;">Empowering every colourful learner</h4>
+    <h4 class="slogan-text">Empowering every colourful learner</h4>
     <p class="hero-p">At <b>Smartie Pants</b>, we create a <b>safe, inclusive, and nurturing learning environment</b> where every child is encouraged to grow, explore, and thrive at their own pace.</p>
     <button class="btn" id="openFormBtn">Enroll Today</button>
   </header>
@@ -698,16 +650,13 @@ p{
 
       </div>
     </section>
-<!-- THERAPY INTEGRATION -->
-<section>
-  <h2>Therapy-Integrated Education</h2>
-  
-  <!-- Add the class="bold-white-text" right here -->
-  <p class="bold-white-text" style="text-align: center; max-width: 850px; margin: 0 auto 50px auto;">
-    At <b>Smartie Pants</b>, we combine education with developmental support to create a holistic learning experience for every child. Our therapy-integrated programmes are designed to strengthen communication, motor development, sensory regulation, confidence, and social interaction in a supportive and inclusive environment.
-  </p>
-  
-  <div class="grid">
+
+    <!-- THERAPY INTEGRATION -->
+    <section>
+      <h2>Therapy-Integrated Education</h2>
+      <div class="about-box" style="margin-bottom: 35px;">
+        <p>At <b>Smartie Pants</b>, we combine education with developmental support to create a holistic learning experience for every child. Our therapy-integrated programmes are designed to strengthen communication, motor development, sensory regulation, confidence, and social interaction in a supportive and inclusive environment.</p>
+      </div>
       
       <div class="grid">
         <div class="card">
@@ -796,7 +745,7 @@ p{
     </div>
   </div>
 
-  <!-- FLOATING FLOATING NAV DOCK -->
+  <!-- FLOATING QUICK NAVIGATION DOCK -->
   <div class="contact-dock">
     <a href="https://wa.me/27765285262" class="dock-btn dock-whatsapp" target="_blank" rel="noopener noreferrer">
       <span class="icon">💬</span>
